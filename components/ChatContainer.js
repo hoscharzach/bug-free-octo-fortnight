@@ -29,7 +29,8 @@ export default function ChatContainer() {
     }
     // console.log(messagesContainer.current)
     function scrollToBottom() {
-        messagesContainer.current.scrollTop = messagesContainer.current.scrollHeight
+        const children = Array.from(messagesContainer.current.children)
+        children[children.length - 1].scrollIntoView()
     }
 
     return (
@@ -43,10 +44,10 @@ export default function ChatContainer() {
 
             {/* users and chat messages */}
             <div className="w-full flex my-2 gap-1 p-4 min-h-[300px]">
-                <div className="flex flex-col w-3/12">
+                <div className="flex flex-col w-3/12 border-r border-slate-500">
                     <Participants />
                 </div>
-                <div ref={messagesContainer} className="flex flex-col w-9/12 gap-2 p-4 max-h-[400px] overflow-y-auto bg-gray-800 bg-opacity-40 rounded-lg">
+                <div ref={messagesContainer} className="flex flex-col w-9/12 gap-2 p-4 max-h-[400px] overflow-y-auto bg-opacity-40 rounded-lg">
                     {messages.length > 0 && messages.map(msg => (
                         <ChatMessage key={nanoid()} message={msg} />
                     ))}
