@@ -14,7 +14,8 @@ export default function Participants() {
         )
     })
     return (
-        <div className="flex flex-col items-start ">
+        <div className="flex flex-col items-start overflow-y-auto ">
+            <div className="w-full flex text-lg font-bold text-blue-500">Users:</div>
             {presenceList && presenceList}
         </div>
     )

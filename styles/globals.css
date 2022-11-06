@@ -30,3 +30,8 @@ a {
     background: #121212;
   }
 }
+
+#test-wrap {
+  overflow-x: hidden;
+  white-space: nowrap;
+}
