@@ -12,7 +12,6 @@ export default function ChatContainer() {
 
         console.log(chatInput.current.value)
         chatInput.current.value = ""
-
     }
 
     return (
