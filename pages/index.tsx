@@ -4,6 +4,11 @@ import ChatContainer from '../components/ChatContainer'
 import styles from '../styles/Home.module.css'
 import GameContainer from '../components/GameContainer'
 import { useState } from 'react'
+import { configureAbly } from '@ably-labs/react-hooks'
+
+configureAbly({
+  authUrl: `${process.env.NEXT_PUBLIC_HOSTNAME}/api/createTokenRequest`
+})
 
 export default function Home() {
 
