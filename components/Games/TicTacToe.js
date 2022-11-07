@@ -1,16 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useChannel } from "@ably-labs/react-hooks"
 
-export default function TicTacToe() {
-
-    async function updateState(val) {
-        await fetch("/api/sendMessage", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ gameState: val, author: ably.auth.clientId, message: 'gameUpdate' })
-        })
-
-    }
+export default function TicTacToe(props) {
 
     const modal = useRef(null)
     const gameBoard = useRef(null)
@@ -33,6 +24,32 @@ export default function TicTacToe() {
     const [player, setPlayer] = useState('x')
     const [gameState, setGameState] = useState({ 0: '', 1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '', 8: '' })
     const [winner, setWinner] = useState(null)
+    const [conn, setConn] = useState({})
+
+
+    useEffect(() => {
+        let connection = new WebSocket('wss://golang-test.onrender.com/ws/2')
+
+        connection.onclose = (e) => {
+            console.log("closing")
+        }
+
+        connection.onmessage = (e) => {
+            const x = JSON.parse(e.data)
+            setGameState({ ...x })
+        }
+
+        setConn(connection)
+    }, [])
+
+    async function updateState(val) {
+        conn.send(JSON.stringify(val))
+        // await fetch("/api/sendMessage", {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify({ gameState: val, author: ably.auth.clientId, message: 'gameUpdate' })
+        // })
+    }
 
     function checkForWin() {
         // just hard code the win conditions since there's only 8 of them
@@ -47,6 +64,7 @@ export default function TicTacToe() {
 
         return false
     }
+    // console.log(player)
     useEffect(() => {
 
         // every time game state changes, check if a win condition has been met
