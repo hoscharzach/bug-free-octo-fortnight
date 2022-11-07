@@ -40,6 +40,8 @@ export default function TicTacToe(props) {
         }
 
         setConn(connection)
+
+        return () => connection.close()
     }, [])
 
     async function updateState(val) {
