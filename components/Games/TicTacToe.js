@@ -101,24 +101,24 @@ export default function TicTacToe() {
         <div className="flex flex-col items-center justify-center">
 
             {/* gameboard */}
-            <div id="gameboard" ref={gameBoard} className="w-[400px] h-[400px]  grid grid-cols-3 grid-rows-3 relative">
-                <div onClick={changeSquare} className="w-full h-full bg-none border-b border-r border-gray-500 relative" data-play={gameState[0]} data-node="0"></div>
-                <div onClick={changeSquare} className="w-full h-full bg-none border-b border-r border-gray-500 relative" data-play={gameState[1]} data-node="1"></div>
-                <div onClick={changeSquare} className="w-full h-full bg-none border-b border-gray-500 relative" data-play={gameState[2]} data-node="2"></div>
-                <div onClick={changeSquare} className="w-full h-full bg-none border-r border-b border-gray-500 relative" data-play={gameState[3]} data-node="3"></div>
-                <div onClick={changeSquare} className="w-full h-full bg-none border-b border-r  border-gray-500 relative" data-play={gameState[4]} data-node="4"></div>
-                <div onClick={changeSquare} className="w-full h-full bg-none border-b  border-gray-500 relative" data-play={gameState[5]} data-node="5"></div>
-                <div onClick={changeSquare} className="w-full h-full bg-none border-r  border-gray-500 relative" data-play={gameState[6]} data-node="6"></div>
-                <div onClick={changeSquare} className="w-full h-full bg-none border-r border-gray-500 relative" data-play={gameState[7]} data-node="7"></div>
-                <div onClick={changeSquare} className="w-full h-full bg-none  border-gray-500 relative" data-play={gameState[8]} data-node="8"></div>
+            <div id="gameboard" ref={gameBoard} className="w-[400px] h-[400px] items-center justify-center grid grid-cols-3 grid-rows-3 relative">
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none border-b border-r border-gray-500 relative" data-play={gameState[0]} data-node="0"></div>
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none border-b border-r border-gray-500 relative" data-play={gameState[1]} data-node="1"></div>
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none border-b border-gray-500 relative" data-play={gameState[2]} data-node="2"></div>
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none border-r border-b border-gray-500 relative" data-play={gameState[3]} data-node="3"></div>
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none border-b border-r  border-gray-500 relative" data-play={gameState[4]} data-node="4"></div>
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none border-b  border-gray-500 relative" data-play={gameState[5]} data-node="5"></div>
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none border-r  border-gray-500 relative" data-play={gameState[6]} data-node="6"></div>
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none border-r border-gray-500 relative" data-play={gameState[7]} data-node="7"></div>
+                <div onClick={changeSquare} className="flex justify-center items-center w-full h-full bg-none  border-gray-500 relative" data-play={gameState[8]} data-node="8"></div>
             </div>
 
             {/* buttons */}
             <div className="flex gap-2 w-full justify-center my-4">
-                <button onClick={showModal} className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="popup-modal">
+                {/* <button onClick={showModal} className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="popup-modal">
                     Toggle modal
-                </button>
-                <button onClick={reset} className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Reset</button>
+                </button> */}
+                <button onClick={reset} className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Rage Reset</button>
             </div>
 
             {/* modal */}

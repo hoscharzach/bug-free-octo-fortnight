@@ -46,16 +46,25 @@ a {
   transform: translate(-50%, -50%);
 }
 
+div[data-play=""]:hover {
+  cursor: pointer;
+}
+
+div[data-play="x"]::before,
 div[data-play="x"]::after {
   position: absolute;
-  top: 10px;
-  left: 0;
-  content: "\274c";
-  /* use the hex value here... */
-  font-size: 100px;
-  color: black;
-  line-height: 100px;
-  text-align: center;
+  content: '';
+  width: 15px;
+  height: 100px;
+  background-color: white;
+}
+
+div[data-play="x"]::before {
+  transform: rotate(45deg);
+}
+
+div[data-play="x"]::after {
+  transform: rotate(-45deg);
 }
 
 div[data-play="o"]::before {
@@ -67,20 +76,20 @@ div[data-play="o"]::before {
   content: "";
   width: 100px;
   height: 100px;
-  background-color: black;
+  background-color: white;
   border-radius: 50%;
 }
 
 div[data-play="o"]::after {
   position: absolute;
   top: 30px;
-  left: 33px;
+  left: 31px;
   right: 0;
   bottom: 0;
   content: "";
-  width: 60px;
-  height: 60px;
-  background-color: white;
+  width: 63px;
+  height: 63px;
+  background-color: #121212;
   border-radius: 50%;
 }
 
