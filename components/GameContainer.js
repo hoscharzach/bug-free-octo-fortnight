@@ -1,3 +1,5 @@
+import TicTacToe from "./Games/TicTacToe"
+
 export default function GameContainer(props) {
     switch (props.game) {
         case 'battleship':
@@ -6,7 +8,8 @@ export default function GameContainer(props) {
             )
         case 'tic-tac-toe':
             return (
-                <div>Tic-Tac-Toe</div>
+                // <div>test</div>
+                <TicTacToe />
             )
         default:
             return (

@@ -23,6 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "components/Games/TicTacToe.js",
   ],
   "exclude": [
     "node_modules"

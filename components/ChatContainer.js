@@ -10,7 +10,9 @@ export default function ChatContainer() {
     const messagesContainer = useRef(null)
     const chatInput = useRef(null)
     const [_, ably] = useChannel("mainchat", chat => {
-        setMessages(prev => [...prev, chat.data])
+        if (!chat.data.gameState) {
+            setMessages(prev => [...prev, chat.data])
+        }
     })
 
     const [messages, setMessages] = useState([])
@@ -34,7 +36,7 @@ export default function ChatContainer() {
     }
 
     return (
-        <div className="w-2/5 max-w-3x border border-slate-500 rounded-lg mt-6">
+        <div className="w-4/5 max-w-3xl border border-slate-500 rounded-lg ml-4 flex flex-col">
 
             {/* Top of chat bar */}
             <div className=" flex justify-center w-full items-center border-b border-slate-500 p-4">

@@ -15,7 +15,7 @@ export default function Home() {
   const [game, setGame] = useState('tic-tac-toe')
 
   return (
-    <div className='flex justify-center flex-col w-full h-full items-center my-6'>
+    <div className='flex justify-center flex-col w-full h-full items-center my-6 gap-4'>
 
       <Head>
         <title>Bideogames</title>
@@ -24,8 +24,11 @@ export default function Home() {
       </Head>
 
       <h1 className='text-6xl font-bold text-blue-500'>Welcome to Bideogames</h1>
-      <GameContainer game={game} />
-      <ChatContainer />
+      <div className='max-w-[90vw] flex flex-col lg:flex-row justify-center md:justify-evenly my-6 w-full'>
+
+        <GameContainer game={game} />
+        <ChatContainer />
+      </div>
     </div>
   )
 }

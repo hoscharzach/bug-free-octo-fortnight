@@ -5,8 +5,8 @@ const channel = ably.channels.get("mainchat")
 
 export default async function handler(req, res) {
 
-    const { author, message } = req.body
-
+    const { author, message, gameState } = req.body
+    console.log(gameState)
     if (req.method !== "POST") {
         res.status(405).json({})
         return
@@ -14,7 +14,8 @@ export default async function handler(req, res) {
 
     channel.publish("new-message", {
         message,
-        author
+        author,
+        gameState
     })
 
     res.status(200).json({})
