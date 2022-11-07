@@ -39,13 +39,13 @@ export default function ChatContainer() {
         <div className="w-4/5 max-w-3xl border border-slate-500 rounded-lg ml-4 flex flex-col">
 
             {/* Top of chat bar */}
-            <div className=" flex justify-center w-full items-center border-b border-slate-500 p-4">
+            <div className=" flex justify-center w-full items-center border-b border-slate-500 p-4 h-16">
                 <div className="text-3xl flex">Gamer-Chat</div>
                 {/* <button className=" p-2 rounded-lg border bg-slate-900 border-gray-400  enabled:hover:border enabled:hover:border-blue-500">Leave Chat</button> */}
             </div>
 
             {/* users and chat messages */}
-            <div className="w-full flex my-2 gap-1 p-4 min-h-[300px]">
+            <div className="w-full flex my-2 gap-1 p-4 min-h-[300px] h-full">
                 <div className="flex flex-col w-3/12 border-r border-slate-500">
                     <Participants />
                 </div>
@@ -57,7 +57,7 @@ export default function ChatContainer() {
             </div>
 
             {/* chat input and send button */}
-            <div className='w-full flex items-center justify-center p-4 border-t border-slate-500'>
+            <div className='w-full flex items-center justify-center p-4 border-t border-slate-500 h-16'>
                 <div className='w-3/12 flex justify-center'>
                     <button onClick={scrollToBottom} className='p-1 px-3 rounded-lg border border-gray-400  enabled:hover:border enabled:hover:border-blue-500'>Scroll to Bottom</button>
                 </div>
