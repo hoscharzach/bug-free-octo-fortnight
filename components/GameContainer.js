@@ -1,6 +1,7 @@
 import TicTacToe from "./Games/TicTacToe"
 
 export default function GameContainer(props) {
+
     switch (props.game) {
         case 'battleship':
             return (
