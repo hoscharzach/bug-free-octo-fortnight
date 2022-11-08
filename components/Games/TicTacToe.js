@@ -27,22 +27,22 @@ export default function TicTacToe(props) {
     const [conn, setConn] = useState({})
 
 
-    useEffect(() => {
-        let connection = new WebSocket('wss://golang-test.onrender.com/ws/2')
+    // useEffect(() => {
+    //     let connection = new WebSocket('wss://golang-test.onrender.com/ws/2')
 
-        connection.onclose = (e) => {
-            console.log("closing")
-        }
+    //     connection.onclose = (e) => {
+    //         console.log("closing")
+    //     }
 
-        connection.onmessage = (e) => {
-            const x = JSON.parse(e.data)
-            setGameState({ ...x })
-        }
+    //     connection.onmessage = (e) => {
+    //         const x = JSON.parse(e.data)
+    //         setGameState({ ...x })
+    //     }
 
-        setConn(connection)
+    //     setConn(connection)
 
-        return () => connection.close()
-    }, [])
+    //     return () => connection.close()
+    // }, [])
 
     async function updateState(val) {
         conn.send(JSON.stringify(val))

@@ -12,7 +12,7 @@ configureAbly({
 
 export default function Home() {
 
-  const [game, setGame] = useState('tic-tac-toe')
+  const [game, setGame] = useState('chess')
 
   return (
     <div className='flex justify-center flex-col w-full h-full items-center my-6 gap-4'>
