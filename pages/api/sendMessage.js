@@ -6,7 +6,7 @@ const channel = ably.channels.get("mainchat")
 export default async function handler(req, res) {
 
     const { author, message, gameState } = req.body
-    console.log(gameState)
+    // console.log(gameState)
     if (req.method !== "POST") {
         res.status(405).json({})
         return
